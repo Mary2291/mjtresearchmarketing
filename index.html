@@ -1,61 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MJT Research Marketing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { margin:0; font-family:Arial,sans-serif; color:#1f2937; background:#f8fafc; }
-    header { background:#0f172a; color:white; padding:70px 20px; text-align:center; }
-    header h1 { font-size:42px; margin:0; }
-    header p { font-size:20px; margin:15px 0; }
-    .btn { display:inline-block; margin-top:20px; background:#2563eb; color:white; padding:14px 24px; border-radius:8px; text-decoration:none; font-weight:bold; }
-    section { max-width:1000px; margin:auto; padding:50px 20px; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .card { background:white; padding:25px; border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,.08); }
-    .card h3 { color:#0f172a; }
-    .contact { background:#e0f2fe; text-align:center; border-radius:16px; }
-    footer { background:#0f172a; color:white; text-align:center; padding:25px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      background: linear-gradient(rgba(2,6,23,.75), rgba(2,6,23,.75)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      max-width: 800px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #0f172a;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #475569;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #eff6ff;
+      padding: 35px;
+      border-radius: 18px;
+    }
+
+    .why {
+      background: #0f172a;
+      color: white;
+    }
+
+    .why .subtitle {
+      color: #cbd5e1;
+    }
+
+    .contact {
+      background: #e0f2fe;
+      text-align: center;
+    }
+
+    .phone {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 18px 0;
+    }
+
+    footer {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 30px 8%;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        margin-top: 15px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 10px 0 0;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>MJT Research Marketing</h1>
-  <p>Lead Generation • Appointment Setting • Virtual Assistant Services</p>
-  <a class="btn" href="https://forms.google.com">Request a Callback</a>
+  <div class="logo">MJT Research Marketing</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section>
-  <h2>Helping Your Business Grow</h2>
+<section class="hero">
+  <h1>Professional Lead Generation & Virtual Assistant Support</h1>
+  <h2>Appointment Setting • Customer Outreach • Business Support</h2>
   <p>
-    MJT Research Marketing helps businesses save time, find qualified leads,
-    schedule appointments, and manage daily support tasks with professional care.
+    We help businesses save time, find qualified leads, schedule appointments,
+    and manage daily tasks with reliable virtual assistant support.
   </p>
+  <a class="btn" href="#contact">Request a Callback</a>
+  <a class="btn secondary" href="tel:9044960277">Call 904-496-0277</a>
 </section>
 
-<section>
-  <h2>Our Services</h2>
+<section id="services" class="center">
+  <h2 class="section-title">Our Services</h2>
+  <p class="subtitle">
+    Flexible support services designed to help your business grow and stay organized.
+  </p>
+
   <div class="cards">
     <div class="card">
       <h3>Lead Generation</h3>
-      <p>We research and identify potential customers for your business.</p>
+      <p>We research and identify potential customers that match your ideal client profile.</p>
     </div>
+
     <div class="card">
       <h3>Appointment Setting</h3>
-      <p>We help contact prospects and schedule appointments for your team.</p>
+      <p>We reach out to prospects and help schedule appointments directly into your calendar.</p>
     </div>
+
     <div class="card">
-      <h3>Virtual Assistant Support</h3>
-      <p>We assist with admin tasks, customer communication, scheduling, and follow-ups.</p>
+      <h3>Virtual Assistant Services</h3>
+      <p>Administrative support, scheduling, email management, follow-ups, and data entry.</p>
+    </div>
+
+    <div class="card">
+      <h3>Customer Outreach</h3>
+      <p>Professional outreach through calls, emails, and follow-ups to grow your pipeline.</p>
     </div>
   </div>
 </section>
 
-<section class="contact">
-  <h2>Request a Callback</h2>
+<section id="about" class="about">
+  <div class="about-grid">
+    <div>
+      <h2 class="section-title">Helping Businesses Stay Focused</h2>
+      <p>
+        MJT Research Marketing provides dependable support for entrepreneurs,
+        small businesses, and growing teams that need help with outreach,
+        lead generation, appointments, and daily administrative work.
+      </p>
+      <br />
+      <p>
+        Our goal is simple: help you focus on closing deals and serving your
+        clients while we handle the time-consuming tasks behind the scenes.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3>What We Help With</h3>
+      <p>✓ Finding qualified leads</p>
+      <p>✓ Booking appointments</p>
+      <p>✓ Following up with prospects</p>
+      <p>✓ Managing admin tasks</p>
+      <p>✓ Supporting daily business operations</p>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why center">
+  <h2 class="section-title">Why Choose MJT Research Marketing?</h2>
+  <p class="subtitle">
+    Reliable communication, organized support, and flexible service for your business needs.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Reliable Support</h3>
+      <p>Consistent help so your business tasks do not fall behind.</p>
+    </div>
+
+    <div class="card">
+      <h3>Professional Outreach</h3>
+      <p>Clear and respectful communication with your prospects and clients.</p>
+    </div>
+
+    <div class="card">
+      <h3>Flexible Services</h3>
+      <p>Support based on your current business needs and workload.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Request a Callback</h2>
   <p>Ready to grow your business? Contact us today.</p>
-  <h3>📞 904-496-0277</h3>
-  <a class="btn" href="https://forms.google.com">Request a Callback</a>
+
+  <div class="phone">📞 904-496-0277</div>
+
+  <a class="btn" href="https://forms.google.com" target="_blank">
+    Request a Callback
+  </a>
 </section>
 
 <footer>

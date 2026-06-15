@@ -29,11 +29,15 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: #38bdf8;
-    }
+ .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+}
 
     nav a {
       color: white;
@@ -191,7 +195,9 @@
 <body>
 
 <header>
-  <div class="logo">MJT Research Marketing</div>
+ <div class="logo">
+    <img src="logo.png" alt="MJT Research Marketing Logo">
+</div>
   <nav>
     <a href="#services">Services</a>
     <a href="#about">About</a>
